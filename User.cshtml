@@ -1,0 +1,20 @@
+@model List<OnlineCourseEnrollment.Models.User>
+
+<h1>User Information</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company</th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Name</td>
+            <td>@user.Email</td>
+            <td>@user.Company.Name</td>
+        </tr>
+    }
+</table>

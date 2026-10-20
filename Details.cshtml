@@ -1,0 +1,42 @@
+@using OnlineCourseEnrollment.Extensions
+@model OnlineCourseEnrollment.Models.Course
+
+<h1>Course Details</h1>
+
+<p>
+    <strong>Course ID:</strong> @Model.CourseId
+</p>
+
+<p>
+    <strong>Course Name:</strong> @Model.CourseName
+</p>
+
+<p>
+    <strong>Duration:</strong> @Model.Duration
+</p>
+
+<p>
+    <strong>Original Fees:</strong> ₹@Model.Fees
+</p>
+
+<p>
+    <strong>Discount:</strong> @Model.DiscountPercentage%
+</p>
+
+<p>
+    <strong>Final Fees:</strong> ₹@Model.CalculateFinalFees()
+</p>
+
+<a asp-controller="Course"
+   asp-action="Enroll"
+   asp-route-id="@Model.CourseId">
+    Enroll Now
+</a>
+
+<br />
+<br />
+
+<a asp-controller="Course"
+   asp-action="Index">
+    Back to Courses
+</a>

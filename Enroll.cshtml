@@ -1,0 +1,28 @@
+@using OnlineCourseEnrollment.Extensions
+@model OnlineCourseEnrollment.Models.Course
+
+<h1>Course Enrollment</h1>
+
+<p><strong>Course:</strong> @Model.CourseName</p>
+<p><strong>Final Fees:</strong> ₹@Model.CalculateFinalFees()</p>
+
+<!-- Submit enrollment details to the controller. -->
+<form method="post" action="/Course/Enroll">
+
+    <!-- Send the course ID using a hidden field. -->
+    <input type="hidden"
+           name="courseId"
+           value="@Model.CourseId" />
+
+    <!-- Collect the student's name. -->
+    <label>Student Name:</label>
+    <input type="text"
+           name="studentName"
+           required />
+
+    <br />
+    <br />
+
+    <!-- Submit the enrollment form. -->
+    <button type="submit">Enroll</button>
+</form>
